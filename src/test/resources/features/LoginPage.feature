@@ -26,4 +26,4 @@ Feature: Login to HRM Application
   Scenario: Verify error message when username is missing
 
     When User enters username as "" and password as "admin123"
-    Then User should be able to see error message "Empty Username"
+    Then User should be able to see error message "Required"
