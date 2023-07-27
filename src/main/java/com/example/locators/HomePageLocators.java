@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePageLocators {
 
-    @FindBy(xpath = "//*[@id='app']/div[1]/div[2]/div[2]/div/div[1]/div[1]/div[1]/div/p")
+    @FindBy(xpath = "//p[normalize-space()='Time at Work']")
     public  WebElement homePageUserName;
 
 }

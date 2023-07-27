@@ -11,14 +11,13 @@ public class LoginPageLocators {
     @FindBy(name = "password")
     public WebElement password;
 
-    @FindBy(xpath = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement login;
 
-    @FindBy(xpath = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span")
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
     public  WebElement errorMessage;
 
-
-    @FindBy(xpath = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span")
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     public WebElement missingUsernameErrorMessage;
 
 }
