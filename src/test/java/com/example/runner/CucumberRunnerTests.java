@@ -22,7 +22,7 @@ import org.testng.annotations.*;
 public class CucumberRunnerTests extends AbstractTestNGCucumberTests {
 
 
-        @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
+        @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
         public void runScenario(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) throws Throwable {
                 super.runScenario(pickleWrapper, featureWrapper);
         }
