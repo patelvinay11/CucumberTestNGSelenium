@@ -1,9 +1,12 @@
 package com.example.utils;
 
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
+import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
+import com.qmetry.qaf.automation.util.StringUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -23,6 +26,12 @@ public class HelperClass {
         //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver(options);
 
+        // Adding ignore webdrivermanager feature in Qmetry
+        //ConfigurationManager.getBundle().setProperty("manage.driver.executable", false);
+
+        // set webdriver properties as system property
+        //setSystemProperty();
+
         driver = new WebDriverTestBase().getDriver();
 
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
@@ -30,6 +39,18 @@ public class HelperClass {
 
     }
 
+
+    private void setSystemProperty() {
+        // updated to support any webdriver property to add as system property
+        Iterator<String> driverproperties = ConfigurationManager.getBundle().getKeys("webdriver");
+        while (driverproperties.hasNext()) {
+            String key = driverproperties.next();
+            String val = ConfigurationManager.getBundle().getString(key);
+            if (StringUtil.isNotBlank(val)) {
+                System.setProperty(key, ConfigurationManager.getBundle().getString(key));
+            }
+        }
+    }
 
     public static void openPage(String url) {
         driver.get(url);
