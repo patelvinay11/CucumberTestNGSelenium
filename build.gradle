@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.qmetry:qaf-cucumber:3.1.0'
     //implementation 'com.qmetry:qaf-support:3.1.0'
     //implementation 'com.qmetry:qaf-support-ws:3.1.0'
+    implementation 'tech.grasshopper:extentreports-cucumber5-adapter:2.16.0'
 
 }
 

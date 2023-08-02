@@ -56,7 +56,7 @@ public class HelperClass {
         driver.get(url);
     }
 
-
+    //public static WebDriver getDriver() { return driver; }
     public static QAFExtendedWebDriver getDriver() {
         return driver;
     }
