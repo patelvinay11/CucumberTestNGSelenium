@@ -8,8 +8,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.*;
 
 @CucumberOptions(
-        tags = "@MissingUsername or @InvalidCredentials or @ValidCredentials",
-        features = {"src/test/resources/features/LoginPage.feature"},
+        tags = "@MissingUsername or @InvalidCredentials or @ValidCredentials or @BackFunctionality",
+        features = {"src/test/resources/features"},
         glue = {"com.example.definitions"},
         plugin = { "pretty",
                 "html:target/cucumber-reports/cucumber-html",

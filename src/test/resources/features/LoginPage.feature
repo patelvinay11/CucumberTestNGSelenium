@@ -1,16 +1,16 @@
 Feature: Login to HRM Application
 
   Background:
-    Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
+    Given User is on Home page
 
   @ValidCredentials
-  Scenario: Login with valid credentials
+  Scenario: Login with valid credentials - Feature 1, Scenario - 1
 
     When User enters username as "Admin" and password as "admin123"
-    Then User should be able to login successfully and new page open
+    Then User should be able to login successfully
 
   @InvalidCredentials
-  Scenario Outline: Login with invalid credentials
+  Scenario Outline: Login with invalid credentials - Feature 1, Scenario - 2
 
     When User enters username as "<username>" and password as "<password>"
     Then User should be able to see error message "<errorMessage>"
@@ -23,7 +23,7 @@ Feature: Login to HRM Application
 
 
   @MissingUsername
-  Scenario: Verify error message when username is missing
+  Scenario: Verify error message when username is missing - Feature 1, Scenario - 3
 
     When User enters username as "" and password as "admin123"
     Then User should be able to see error message for empty username as "Required"
