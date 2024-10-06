@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
-import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
 import com.qmetry.qaf.automation.util.StringUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,24 +14,24 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class HelperClass {
 
     private static HelperClass helperClass;
-    //private static WebDriver driver;
-    private static QAFExtendedWebDriver driver;
+    private static WebDriver driver;
     public final static int TIMEOUT = 10;
 
     private HelperClass() {
 
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--remote-allow-origins=*");
+        /*System.setProperty("webdriver.chrome.driver", "./resources/drivers/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         //WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);*/
 
         // Adding ignore webdrivermanager feature in Qmetry
-        //ConfigurationManager.getBundle().setProperty("manage.driver.executable", false);
+        ConfigurationManager.getBundle().setProperty("manage.driver.executable", false);
 
         // set webdriver properties as system property
-        //setSystemProperty();
+        setSystemProperty();
 
-        driver = new WebDriverTestBase().getDriver();
+        driver = new WebDriverTestBase().getDriver().getUnderLayingDriver();
 
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -56,10 +55,7 @@ public class HelperClass {
         driver.get(url);
     }
 
-    //public static WebDriver getDriver() { return driver; }
-    public static QAFExtendedWebDriver getDriver() {
-        return driver;
-    }
+    public static WebDriver getDriver() { return driver; }
 
     public static void setUpDriver() {
 
