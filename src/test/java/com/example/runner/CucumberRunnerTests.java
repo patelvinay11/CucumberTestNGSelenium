@@ -20,7 +20,7 @@ import org.testng.annotations.*;
         monochrome = true
 )
 
-public class TestNGCucumberRunner extends AbstractTestNGCucumberTests {
+public class CucumberRunnerTests extends AbstractTestNGCucumberTests {
 
 
         @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")

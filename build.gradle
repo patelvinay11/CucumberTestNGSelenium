@@ -55,6 +55,7 @@ tasks.named('test') {
         parallel="tests"
         threadCount=2
         jvmArgs(["-Ddataproviderthreadcount=${threads}"]) // Default value is defined in gradle.properties //gradle clean test -Pthreads=4
+        jvmArgs(["-Dcucumber.filter.tags=${tags}"]) //gradle clean test -Ptags="@MissingUsername or @InvalidCredentials"
         scanForTestClasses = false
         testLogging {
             showStandardStreams = true

@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Cucumber Parallel Execution" verbose="1" thread-count="2" parallel="tests" data-provider-thread-count="3">
+<suite name="Cucumber Parallel Execution" verbose="4" thread-count="2" parallel="tests" data-provider-thread-count="3">
     <!--<listeners>
         <listener class-name="com.example.listeners.BDDTestListener"/>
     </listeners>-->
     <test name="Cucumber Tests">
         <classes>
-            <class name="com.example.runner.TestNGCucumberRunner" />
+            <class name="com.example.runner.CucumberRunnerTests" />
         </classes>
         <!--<parameter name="scenario.file.loc" value="src/test/resources/features" />
         <parameter name="step.provider.pkg" value="com.example.definitions" />-->
