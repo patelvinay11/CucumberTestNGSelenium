@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +23,20 @@ public class BaseTest {
 
     public WebDriver driver;
     public final static int TIMEOUT = 10;
+
+    private ThreadLocal<Map<String, String>> data = new ThreadLocal<>();
+
+    public Map<String, String> getData() {
+        return data.get();
+    }
+
+    public void setData(Map<String, String> testData) {
+        data.set(testData);
+    }
+
+    public void removeData() {
+        data.remove();
+    }
 
     public WebDriver WebDriverManager () throws IOException {
 
