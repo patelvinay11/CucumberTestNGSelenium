@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Cucumber Parallel Execution" verbose="4" thread-count="2" parallel="methods" data-provider-thread-count="3">
+    <listeners>
+        <listener class-name="com.example.listeners.BDDTestListener"/>
+    </listeners>
+    <test name="Cucumber Tests">
+        <parameter name="cucumber.features" value="src/test/resources/features" />
+        <parameter name="cucumber.glue" value="com.example.definitions" />
+        <parameter name="cucumber.filter.tags" value="@MissingUsername or @InvalidCredentials or @ValidCredentials or @BackFunctionality" />
+        <classes>
+            <class name="com.qmetry.qaf.automation.cucumber.runner.CucumberScenarioFactory"/>
+        </classes>
+    </test>
+</suite>

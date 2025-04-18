@@ -46,6 +46,18 @@ dependencies {
     //implementation 'com.qmetry:qaf-support:3.1.0'
     //implementation 'com.qmetry:qaf-support-ws:3.1.0'
     implementation 'tech.grasshopper:extentreports-cucumber5-adapter:2.16.0'
+    implementation 'com.vladsch.flexmark:flexmark-all:0.64.8' // Added for converting WebPage to MarkDown file
+
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // Can be Deleted - Start
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    implementation 'com.sun.codemodel:codemodel:2.6'
+    testImplementation 'junit:junit:4.13.2'
+    // Can be Deleted - End
+
 
 }
 

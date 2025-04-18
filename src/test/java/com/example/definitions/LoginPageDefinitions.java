@@ -93,9 +93,9 @@ public class LoginPageDefinitions {
             String method = messageJSON.getJSONObject("message").getString("method");
             if(method.equalsIgnoreCase("Network.requestWillBeSent")){
                 //System.out.println("Message Sent: " + messageJSON.getJSONObject("message").getJSONObject("params").getJSONObject("request").getString("payloadData"));
-                System.out.println("Message Sent: " + messageJSON.getJSONObject("message").getJSONObject("params").getJSONObject("request").toString());
+                System.out.println("Message Sent: " + messageJSON.getJSONObject("message").getJSONObject("params").getJSONObject("request").toString(4));
             }else if(method.equalsIgnoreCase("Network.responseReceived")){
-                System.out.println("Message Received: " + messageJSON.getJSONObject("message").getJSONObject("params").getJSONObject("response").toString());
+                System.out.println("Message Received: " + messageJSON.getJSONObject("message").getJSONObject("params").getJSONObject("response").toString(4));
             }
         }
 
