@@ -52,6 +52,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
+    implementation 'com.jayway.jsonpath:json-path:2.8.0'
+
     // Can be Deleted - Start
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
     implementation 'com.sun.codemodel:codemodel:2.6'
